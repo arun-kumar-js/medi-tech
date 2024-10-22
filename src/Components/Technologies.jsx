@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { RiReactjsLine } from 'react-icons/ri';
 import { SiMongodb, SiExpress, SiNodedotjs, SiTailwindcss, SiBootstrap, SiGithub, SiNetlify, SiVercel, SiVisualstudiocode } from 'react-icons/si';
-import './Technologies.css';
 
 const Technologies = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('tech-section');
-      const rect = element.getBoundingClientRect();
-      if (rect.top <= window.innerHeight) {
-        setIsVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    AOS.init(); // Initialize AOS
   }, []);
 
   return (
@@ -35,7 +23,9 @@ const Technologies = () => {
         ].map((tech, index) => (
           <div
             key={index}
-            className={`tech-icon ${isVisible ? 'animate' : ''}`}
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
           >
             {tech.icon}
             <span className="sr-only">{tech.title}</span>
@@ -54,7 +44,9 @@ const Technologies = () => {
         ].map((tool, index) => (
           <div
             key={index}
-            className={`tool-icon ${isVisible ? 'animate' : ''}`}
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
           >
             {tool.icon}
             <span className="sr-only">{tool.title}</span>

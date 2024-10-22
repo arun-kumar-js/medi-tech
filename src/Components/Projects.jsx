@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import './Projects.css';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export const PROJECTS = [
     {
@@ -35,20 +37,7 @@ export const PROJECTS = [
 const Projects = () => {
 
     useEffect(() => {
-        const handleScroll = () => {
-            const elements = document.querySelectorAll('.project-container');
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top <= window.innerHeight - 100) { // Adjust to trigger earlier
-                    el.classList.add('animate');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        AOS.init({ duration: 1000 }); 
     }, []);
 
     return (
@@ -56,7 +45,10 @@ const Projects = () => {
             <h2 className='my-4 text-center text-4xl'>Projects</h2>
             <div>
                 {PROJECTS.map((project, index) => (
-                    <div key={index} className="mb-8 flex flex-wrap lg:justify-center project-container">
+                    <div key={index} 
+                         className="mb-8 flex flex-wrap lg:justify-center project-container" 
+                         data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}> {/* Alternate between fade-right and fade-left */}
+                        
                         <div className='w-full lg:w-1/4'>
                             <a href={project.url} target="_blank" rel="noopener noreferrer">
                                 <img src={project.image}
