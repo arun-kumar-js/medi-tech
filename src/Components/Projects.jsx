@@ -7,7 +7,7 @@ export const PROJECTS = [
         image: "/images/Airbnb-Frontend.PNG",
         description: "A fully functional Airbnb clone with features like user authentication, booking places, and viewing listings.",
         technologies: ["MongoDB", "React", "Node.js", "Express", "Tailwind CSS"],
-        url: "https://your-airbnb-clone-url.com"
+        url: "https://mern-project-liart.vercel.app/"
     },
     {
         title: "Shopping Cart",

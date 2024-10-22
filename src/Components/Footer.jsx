@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto text-center">
                 
                 <p className="text-sm">
-                    © {new Date().getFullYear()} Hema. All rights reserved.
+                    © {new Date().getFullYear()} Hema-hemakarthikeyan2024@gmail.com
                 </p>
                 <p className="text-sm">
                     Designed with ❤️ using React

@@ -1,4 +1,4 @@
-import img from '../assets/assets/img.webp';
+
 import React from 'react';
 import './Hero.css';
 import { motion } from 'framer-motion';
@@ -43,12 +43,12 @@ const Hero = () => {
                         className='flex flex-col items-center text-center lg:items-start lg:text-left mt-10'
                         initial="hidden"
                         animate="visibility"
-                        variants={ContainerVariable}  // Reference parent variant
+                        variants={ContainerVariable}  
                     >
                         {/* Name Heading */}
                         <motion.h2
                             className='pt-4 text-2xl lg:text-4xl tracking-tighter'
-                            variants={childVariant}  // Use child variant
+                            variants={childVariant}  
                         >
                             Hemapriya
                         </motion.h2>
@@ -70,11 +70,11 @@ const Hero = () => {
                         </motion.p>
                         
                         <motion.a
-                            href='/resume.pdf'
+                            href='Hema_dev_final.pdf'
                             target='_blank'
                             rel='noopener noreferrer'
                             className='bg-white rounded-full p-4 text-sm text-stone-800 mb-10'
-                            variants={childVariant}  // Use child variant
+                            variants={childVariant}  
                         >
                             Download Resume
                         </motion.a>
