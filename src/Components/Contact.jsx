@@ -36,7 +36,7 @@ export default function Contact() {
         <div className="min-h-screen flex items-center justify-center">
             <div 
                 className="w-full max-w-md p-8 rounded-lg shadow-md"
-                data-aos="zoom-in"  // Apply AOS animation here
+                data-aos="zoom-in"  
             >
                 <h2 className="text-2xl font-bold text-center mb-6 text-white">Contact Me</h2>
                 <form onSubmit={onSubmit} className="space-y-4">
