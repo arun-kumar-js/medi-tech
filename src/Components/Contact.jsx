@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Contact() {
     const [result, setResult] = React.useState("");
+
+    useEffect(() => {
+        AOS.init(); // Initialize AOS
+    }, []);
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -28,7 +34,10 @@ export default function Contact() {
 
     return (
         <div className="min-h-screen flex items-center justify-center">
-            <div className="w-full max-w-md p-8 rounded-lg shadow-md">
+            <div 
+                className="w-full max-w-md p-8 rounded-lg shadow-md"
+                data-aos="zoom-in"  // Apply AOS animation here
+            >
                 <h2 className="text-2xl font-bold text-center mb-6 text-white">Contact Me</h2>
                 <form onSubmit={onSubmit} className="space-y-4">
                     <div>
