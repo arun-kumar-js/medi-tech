@@ -32,6 +32,14 @@ export const PROJECTS = [
         technologies: ["HTML", "CSS", "React"],
         url: "https://guvi-routertask.netlify.app/" 
     },
+    {
+        title: "StyleSwap",
+        image: "/images/StyleSwap.PNG", 
+        description: "An exclusive e-commerce platform tailored for users, offering a comprehensive range of products across categories to meet their unique needs. The site focuses on delivering a seamless and stylish shopping experience.",
+        technologies: ["HTML", "TailwindCSS", "React"],
+        url: "https://shoopingcartkhp.netlify.app/"
+
+    }
 ];
 
 const Projects = () => {
