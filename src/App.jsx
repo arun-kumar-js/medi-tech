@@ -6,6 +6,7 @@ import Technologies from './Components/Technologies';
 import Education from './Components/Education';
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
+import Certification from './Components/Certification';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Technologies />
         <Projects />
         <Education />
+        <Certification />
         <Contact />
         <Footer />
 

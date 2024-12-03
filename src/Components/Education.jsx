@@ -7,7 +7,7 @@ export const EDUCATION = [
         degree: "Master of Science (M.Sc.) in Computer Science",
         institution: "Joseph's Arts and Science College, Thirunavallur",
         year: "2022 - 2024",
-        description: "Focused on advanced topics in computer science, including software development and database management. Completed full-stack development using the MERN stack @GUVI",
+        description: "Focused on advanced topics in computer science, including software development and database management.",
         grade: "First Class"
     },
     {
@@ -37,7 +37,6 @@ const Education = () => {
     useEffect(() => {
         AOS.init(); 
     }, []);
-
     return (
         <div className='pb-4'>
             <h2 className='my-20 text-center text-4xl'>Education</h2>

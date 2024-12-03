@@ -7,40 +7,40 @@ export const PROJECTS = [
     {
         title: "Airbnb Clone",
         image: "/images/Airbnb-Frontend.PNG",
-        description: "A fully functional Airbnb clone with features like user authentication, booking places, and viewing listings.",
+        description: "A fully responsive Airbnb-inspired web application featuring user authentication, property listings, booking functionality, and user-friendly interfaces.",
         technologies: ["MongoDB", "React", "Node.js", "Express", "Tailwind CSS"],
         url: "https://mern-project-liart.vercel.app/"
     },
     {
-        title: "Shopping Cart",
-        image: "/images/shopping-cart.webp", 
-        description: "An e-commerce website that allows users to browse products, add them to their cart, and make purchases.",
-        technologies: ["HTML", "CSS", "React"],
-        url: "https://shopping-cart-react-mern.netlify.app/"
+      "title": "Portfolio Website",
+      image: "/images/portfolio.PNG",
+      "url": "https://khp-dev-portfolio.netlify.app/",
+      "description": "A personal portfolio designed to showcase skills, projects, and achievements. Built using React and enhanced with animation effects using AOS (Animate on Scroll).",
+      "technologies": ["React", "AOS"]
     },
     {
-        title: "To-Do App",
-        image: "/images/todo-app.webp", 
-        description: "A simple To-Do application for managing tasks, with features like adding, editing, and deleting tasks.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        url: "https://todo-task-mern.netlify.app/"
+      "title": "StyleSwap",
+      image: "/images/StyleSwap.PNG",
+      "url": "https://styleswap.vercel.app/",
+      "description": "A feature-rich e-commerce platform with an integrated admin panel. Users can browse products, and the admin can manage inventory and orders. Features include Cloudinary for image hosting and Toastify for notifications.",
+      "technologies": ["MongoDB", "Express", "React", "Node.js", "Cloudinary", "Toastify"]
     },
     {
-        title: "GUVI Clone",
-        image: "/images/guvi-clone.webp", 
-        description: "A clone of the GUVI website that offers online courses, user registration, and profile management.",
-        technologies: ["HTML", "CSS", "React"],
-        url: "https://guvi-routertask.netlify.app/" 
+      "title": "Blog Website",
+      image: "/images/blog.PNG",
+      "url": "https://blog-frontend-kappa-one.vercel.app/",
+      "description": "A blogging platform where logged-in users can create and manage their blogs. Users can edit only their own blogs, ensuring secure and personalized content management.",
+      "technologies": ["MongoDB", "Express", "React", "Node.js"]
     },
     {
-        title: "StyleSwap",
-        image: "/images/StyleSwap.PNG", 
-        description: "An exclusive e-commerce platform tailored for users, offering a comprehensive range of products across categories to meet their unique needs. The site focuses on delivering a seamless and stylish shopping experience.",
-        technologies: ["HTML", "TailwindCSS", "React"],
-        url: "https://shoopingcartkhp.netlify.app/"
-
+      "title": "LinkedIn Clone",
+      image: "/images/Linkedin.PNG",
+      "url": "https://project-umber-delta.vercel.app/",
+      "description": "A social platform inspired by LinkedIn. Users can sign up, log in, create posts, and follow others. Designed for networking and professional connections.",
+      "technologies": ["MongoDB", "Express", "React", "Node.js"]
     }
-];
+  ]
+  
 
 const Projects = () => {
 
@@ -48,40 +48,48 @@ const Projects = () => {
         AOS.init({ duration: 1000 }); 
     }, []);
 
-    return (
-        <div className='pb-4'>
-            <h2 className='my-4 text-center text-4xl'>Projects</h2>
-            <div>
-                {PROJECTS.map((project, index) => (
-                    <div key={index} 
-                         className="mb-8 flex flex-wrap lg:justify-center project-container" 
-                         data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}> {/* Alternate between fade-right and fade-left */}
-                        
-                        <div className='w-full lg:w-1/4'>
-                            <a href={project.url} target="_blank" rel="noopener noreferrer">
-                                <img src={project.image}
-                                    width={250}
-                                    height={250}
-                                    alt={project.title}
-                                    className='mb-6 rounded project-image' />
-                            </a>
-                        </div>
-                        <div className='w-xl max-w-xl lg:w-3/4'>
-                            <h3 className='mb-2 font-semibold text-2xl'>{project.title}</h3>
-                            <p className='mb-4 text-stone-400'>{project.description}</p>
-                            <div>
-                                {project.technologies.map((item, index) => (
-                                    <span className='mr-2 rounded bg-stone-900 p-2 text-sm font-medium text-stone-300' key={index}>
-                                        {item}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
+    return(
+        <section >
+          <h2 className="mb-8 text-center text-4xl font-bold">Projects</h2>
+          <div className="container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {PROJECTS.map((project, index) => (
+              <div
+                key={index}
+                className="rounded-lg p-4 shadow-lg transform transition duration-500 hover:scale-105"
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              >
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="mb-4 h-40 w-full rounded object-cover"
+                  />
+                </a>
+                <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>
+                <p className="mb-4 text-gray-400">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((item, index) => (
+                    <span
+                      key={index}
+                      className="rounded bg-gray-700 px-2 py-1 text-sm text-gray-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block rounded bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:bg-blue-500"
+                >
+                  View Project
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    };
+    
 export default Projects;
