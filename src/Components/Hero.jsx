@@ -70,7 +70,7 @@ const Hero = () => {
                         </motion.p>
                         
                         <motion.a
-                            href='Hema_developer.pdf'
+                            href='Hemapriya_Fsd_Resume.pdf'
                             target='_blank'
                             rel='noopener noreferrer'
                             className='bg-white rounded-full p-4 text-sm text-stone-800 mb-10'
